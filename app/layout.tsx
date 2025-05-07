@@ -1,4 +1,7 @@
-import './globals.css'
+export const metadata = {
+  title: 'Retirement Calculator',
+  description: 'Plan your retirement savings',
+}
 
 export default function RootLayout({
   children,
@@ -7,7 +10,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="min-h-screen bg-white">{children}</body>
     </html>
   )
 }
