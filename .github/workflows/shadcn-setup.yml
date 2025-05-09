@@ -1,4 +1,4 @@
-name: ShadCN Setup 2
+name: ShadCN Setup
 on: [workflow_dispatch]
 
 permissions:
@@ -27,8 +27,10 @@ jobs:
       - name: Add ShadCN UI Components
         run: npx shadcn-ui@latest add button card input label checkbox table
 
-      - name: Verify changes
-        run: git status
+      - name: Check for changes
+        run: |
+          echo "Checking for changes..."
+          git status
 
       - name: Auto-commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
