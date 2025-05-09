@@ -1,0 +1,11 @@
+{
+  "components": [
+    "button",
+    "card",
+    "input",
+    "label",
+    "checkbox",
+    "table",
+    "tooltip"
+  ]
+}
