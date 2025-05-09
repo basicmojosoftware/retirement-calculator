@@ -1,9 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // Remove the experimental.appDir if present
-  // Keep only necessary experimental features
   experimental: {
+    // Remove appDir from here
     serverComponentsExternalPackages: [
       '@radix-ui/react-dialog',
       '@radix-ui/react-slot',
@@ -11,14 +10,6 @@ const nextConfig = {
       'clsx',
       'tailwind-merge',
     ],
-  },
-  // Add path aliases if using them
-  webpack: (config) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      '@': require('path').resolve(__dirname, 'src'),
-    }
-    return config
   }
 }
 
