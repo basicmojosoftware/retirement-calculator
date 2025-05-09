@@ -1,4 +1,4 @@
-name: ShadCN Setup
+name: ShadCN Setup 2
 on: [workflow_dispatch]
 
 permissions:
