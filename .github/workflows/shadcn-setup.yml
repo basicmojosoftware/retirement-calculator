@@ -1,5 +1,7 @@
 name: ShadCN Setup
 on: [workflow_dispatch]
+permissions:
+  contents: write
 jobs:
   setup:
     runs-on: ubuntu-latest
