@@ -1,0 +1,36 @@
+name: ShadCN Setup
+on: [workflow_dispatch]
+
+permissions:
+  contents: write
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Verify working directory
+        run: |
+          pwd
+          ls -la
+
+      - name: Initialize ShadCN UI
+        run: npx shadcn-ui@latest init -y
+
+      - name: Add ShadCN UI Components
+        run: npx shadcn-ui@latest add button card input label checkbox table
+
+      - name: Verify changes
+        run: git status
+
+      - name: Auto-commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "feat: add ShadCN UI components"
