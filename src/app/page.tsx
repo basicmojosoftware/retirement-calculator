@@ -1,19 +1,19 @@
 'use client'
 import { useState } from 'react';
-import { Button } from "/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "/components/ui/card";
-import { Input } from "/components/ui/input";
-import { Label } from "/components/ui/label";
-import { Checkbox } from "/components/ui/checkbox";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "/components/ui/table";
-import { Toggle } from "/components/ui/toggle";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Toggle } from "@/components/ui/toggle";
 import { Info } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "/components/ui/tooltip";
+} from "@/components/ui/tooltip";
 
 interface FormData {
   startingAge: string;
