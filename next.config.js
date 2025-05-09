@@ -1,15 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // Required for ShadCN UI path aliases
-  webpack: (config) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      '@': require('path').resolve(__dirname, 'src'),
-    }
-    return config
-  },
-  // Fixes "Module not found" for ShadCN components
+  // Remove the experimental.appDir if present
+  // Keep only necessary experimental features
   experimental: {
     serverComponentsExternalPackages: [
       '@radix-ui/react-dialog',
@@ -19,6 +12,14 @@ const nextConfig = {
       'tailwind-merge',
     ],
   },
+  // Add path aliases if using them
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': require('path').resolve(__dirname, 'src'),
+    }
+    return config
+  }
 }
 
 module.exports = nextConfig
